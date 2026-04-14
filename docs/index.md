@@ -1,0 +1,40 @@
+# MSP430 LCD Library
+
+This library provides a simple interface to control multiplexing a character LCD in 4-bit mode using an MSP430. 
+
+## Included Functions
+
+- **`initLCD`**: Sends wake-up commands correctly sequenced to clear display buffers.
+- **`printString`**: Pushes strings onto the display with programmable per char delays.
+- **`writeChar` / `writeCommand`**: Writes commands directly to the Display.
+
+## Getting Started
+
+```md
+# 4 Bit Mode Wiring
+
+VCC -> + Rail (Female->Male)
+GND -> - Rail (Male->Male)
+
+\+ Rail -> VDD, LED+ (BLA) (Male->Male)
+\- Rail -> VSS, LED- (BLK) (Male->Male)
+
+Potentiometer (25k) -> + Rail (Male->Male)
+|
+-> V0 (Male->Male)
+|
+-> - Rail (Male->Male)
+
+RW -> GND (Write mode) (Male->Male)
+P1.4 -> D4 (Female->Male)
+P1.5 -> D5
+P1.6 -> D6
+P1.7 -> D7
+P2.0 -> RS
+P2.1 -> E
+```
+
+Start here:
+
+* [API Reference](api.md) — Functions and usage.
+* [Examples Usage](examples.md) — Examples (stopwatch)

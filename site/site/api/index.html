@@ -1,0 +1,707 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../examples/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>API Reference - MSP430 LCD API</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#stopwatch-lcd-api-reference" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="MSP430 LCD API" class="md-header__button md-logo" aria-label="MSP430 LCD API" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            MSP430 LCD API
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              API Reference
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="MSP430 LCD API" class="md-nav__button md-logo" aria-label="MSP430 LCD API" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    MSP430 LCD API
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Reference
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#core-state-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Core State Variables
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interrupt-service-routines" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interrupt Service Routines
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Interrupt Service Routines">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#timer_a-timer0_a0_vector" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Timer_A (TIMER0_A0_VECTOR)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#p1_isr-port1_vector" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        P1_ISR (PORT1_VECTOR)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lcd-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LCD Functions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="LCD Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#initlcd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        initLCD
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#printstring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        printString
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#writechar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        writeChar
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#writecommand" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        writeCommand
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pulseenable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pulseEnable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Examples
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#core-state-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Core State Variables
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interrupt-service-routines" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interrupt Service Routines
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Interrupt Service Routines">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#timer_a-timer0_a0_vector" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Timer_A (TIMER0_A0_VECTOR)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#p1_isr-port1_vector" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        P1_ISR (PORT1_VECTOR)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lcd-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LCD Functions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="LCD Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#initlcd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        initLCD
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#printstring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        printString
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#writechar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        writeChar
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#writecommand" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        writeCommand
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pulseenable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pulseEnable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="stopwatch-lcd-api-reference">Stopwatch + LCD API Reference</h1>
+<p>This document describes the internal workings, globals, and the LCD utility functions available in the MSP430 Precision Stopwatch API.</p>
+<h2 id="core-state-variables">Core State Variables</h2>
+<ul>
+<li><strong><code>time_count</code></strong>: The core accumulator tracking elapsed time in 0.1ms (100µs) increments. Read atomically to avoid tearing.</li>
+<li><strong><code>running</code></strong>: Boolean flag toggled when the stopwatch starts or pauses.</li>
+<li><strong><code>button_pressed</code></strong>: Boolean reflecting whether the button is currently held down.</li>
+<li><strong><code>button_timer</code></strong>: Tracks how long the button has been held. Reaching <code>HOLD_THRESHOLD</code> (10000 ticks = 1s) triggers a stopwatch reset.</li>
+</ul>
+<h2 id="interrupt-service-routines">Interrupt Service Routines</h2>
+<h3 id="timer_a-timer0_a0_vector"><code>Timer_A (TIMER0_A0_VECTOR)</code></h3>
+<p>Triggers repeatedly every 0.1ms (driven by <code>TA0CCR0 = 100</code> on a 1MHz SMCLK). If <code>running</code> is <code>true</code>, <code>time_count</code> is incremented. If <code>button_pressed</code> is <code>true</code>, <code>button_timer</code> increments to track hold duration.</p>
+<h3 id="p1_isr-port1_vector"><code>P1_ISR (PORT1_VECTOR)</code></h3>
+<p>Edge-triggered hardware interrupt for the P1.3 push button. 
+- On a <strong>falling edge</strong> (button push), registers the press, resets <code>button_timer</code> and flips the edge selection to rising.
+- On a <strong>rising edge</strong> (button release), applies software debouncing. If the button was depressed longer than <code>123 * 0.1ms</code> but less than <code>HOLD_THRESHOLD</code>, the <code>running</code> flag is toggled. Finally, it flips the edge selection back to falling.</p>
+<h2 id="lcd-functions">LCD Functions</h2>
+<h3 id="initlcd"><code>initLCD</code></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">initLCD</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
+</code></pre></div>
+<p>Sets the correct MSP430 pins (P1.4 - P1.7, P2.0, P2.1) as outputs and sends the required initialization sequence to the LCD. Sets the display into 4-bit mode, configures for 2 lines, 5x8 font, increments the cursor, and turns on the cursor blinking.</p>
+<h3 id="printstring"><code>printString</code></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">printString</span><span class="p">(</span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">text</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">delay_ms</span><span class="p">);</span>
+</code></pre></div>
+<p>Iterates through a null-terminated string and prints each character sequentially. Includes a built-in busy delay function <code>delay_ms</code> wait per character.</p>
+<p><strong>Parameters:</strong>
+- <code>text</code>: Pointer to the null-terminated string/character array.
+- <code>delay_ms</code>: Software delay in milliseconds between each character.</p>
+<h3 id="writechar"><code>writeChar</code></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">writeChar</span><span class="p">(</span><span class="kt">char</span><span class="w"> </span><span class="n">data</span><span class="p">);</span>
+</code></pre></div>
+<p>Sets the RS pin (<code>P2.0</code>) HIGH and places the bits corresponding to the character onto the data bus (<code>P1.4 - P1.7</code>). Uses a falling edge read via <code>pulseEnable()</code>.</p>
+<p><strong>Parameters:</strong>
+- <code>data</code>: ASCII encoded data to send to the LCD data register.</p>
+<h3 id="writecommand"><code>writeCommand</code></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">writeCommand</span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">command</span><span class="p">);</span>
+</code></pre></div>
+<p>Clears the RS pin (<code>P2.0</code>) to LOW and passes command bit instructions to the LCD. Uses <code>pulseEnable()</code> to clock in the corresponding upper and lower nibbles.</p>
+<p><strong>Parameters:</strong>
+- <code>command</code>: 8-bit instruction representing commands (e.g. <code>0x01</code> for Clear Display).</p>
+<h3 id="pulseenable"><code>pulseEnable</code></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">pulseEnable</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
+</code></pre></div>
+<p>Primes the <code>E</code> (Enable) line HIGH, waits for <code>450_ns</code>, and pulls it LOW to clock in data on the falling edge. This is an internal function utilized by <code>writeChar()</code> and <code>writeCommand()</code>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

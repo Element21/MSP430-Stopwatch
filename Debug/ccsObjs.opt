@@ -1,0 +1,9 @@
+"./InitLCD.obj"
+"./PrintString.obj"
+"./PulseEnable.obj"
+"./WriteChar.obj"
+"./WriteCommand.obj"
+"./main.obj"
+"./examples/hello_lcd.obj"
+"../lnk_msp430g2553.cmd"
+-llibc.a
