@@ -5,6 +5,8 @@ site_url: https://element21.github.io/MSP430-Stopwatch/
 theme:
   name: material
 
+docs_dir: docs-not-gh-pages
+
 nav:
   - Home: index.md
   - API Reference: api.md
