@@ -1,5 +1,7 @@
 # MSP430 LCD Library
 
+Pathways: Technical + Communication + Documentation
+
 This library provides a simple interface to control multiplexing a character LCD in 4-bit mode using an MSP430. 
 
 ## Included Functions
@@ -37,4 +39,4 @@ P2.1 -> E
 Start here:
 
 * [API Reference](api.md) — Functions and usage.
-* [Examples Usage](examples.md) — Examples (stopwatch)
+* [Example Usage](examples.md) — Examples (stopwatch)
