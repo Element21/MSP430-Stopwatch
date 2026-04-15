@@ -2,13 +2,13 @@
 
 Pathways: Technical + Communication + Documentation
 
-This library provides a simple interface to control multiplexing a character LCD in 4-bit mode using an MSP430. 
+This library provides a simple interface to control a 1602 LCD in 4-bit mode using an MSP430. 
 
 ## Included Functions
 
-- **`initLCD`**: Sends wake-up commands correctly sequenced to clear display buffers.
-- **`printString`**: Pushes strings onto the display with programmable per char delays.
-- **`writeChar` / `writeCommand`**: Writes commands directly to the Display.
+- **`initLCD`**: Sends initial setup commands correctly sequenced to set 4 bit mode, clear display, cursor on.
+- **`printString`**: Writes strings onto the display with programmable per char delays.
+- **`writeChar` / `writeCommand`**: Writes commands directly to the display.
 
 ## Getting Started
 

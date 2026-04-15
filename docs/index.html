@@ -406,12 +406,12 @@
 
 <h1 id="msp430-lcd-library">MSP430 LCD Library</h1>
 <p>Pathways: Technical + Communication + Documentation</p>
-<p>This library provides a simple interface to control multiplexing a character LCD in 4-bit mode using an MSP430. </p>
+<p>This library provides a simple interface to control a 1602 LCD in 4-bit mode using an MSP430. </p>
 <h2 id="included-functions">Included Functions</h2>
 <ul>
-<li><strong><code>initLCD</code></strong>: Sends wake-up commands correctly sequenced to clear display buffers.</li>
-<li><strong><code>printString</code></strong>: Pushes strings onto the display with programmable per char delays.</li>
-<li><strong><code>writeChar</code> / <code>writeCommand</code></strong>: Writes commands directly to the Display.</li>
+<li><strong><code>initLCD</code></strong>: Sends initial setup commands correctly sequenced to set 4 bit mode, clear display, cursor on.</li>
+<li><strong><code>printString</code></strong>: Writes strings onto the display with programmable per char delays.</li>
+<li><strong><code>writeChar</code> / <code>writeCommand</code></strong>: Writes commands directly to the display.</li>
 </ul>
 <h2 id="getting-started">Getting Started</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="gh"># 4 Bit Mode Wiring</span>
