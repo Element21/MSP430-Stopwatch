@@ -646,9 +646,11 @@
 <h3 id="timer_a-timer0_a0_vector"><code>Timer_A (TIMER0_A0_VECTOR)</code></h3>
 <p>Triggers repeatedly every 0.1ms. If <code>running</code> is <code>true</code>, <code>time_count</code> is incremented. If <code>button_pressed</code> is <code>true</code>, <code>button_timer</code> increments to track hold duration.</p>
 <h3 id="p1_isr-port1_vector"><code>P1_ISR (PORT1_VECTOR)</code></h3>
-<p>Edge-triggered hardware interrupt for the P1.3 push button.\
-- On a falling edge (button push), registers the press, resets <code>button_timer</code> and flips the edge selection to rising.\
-- On a rising edge (button release), applies software debouncing. If the button was depressed longer than <code>123 * 0.1ms</code> but less than <code>HOLD_THRESHOLD</code>, the <code>running</code> flag is toggled. Finally, it flips the edge selection back to falling.\</p>
+<p>Edge-triggered hardware interrupt for the P1.3 push button.
+- On a falling edge (button push), registers the press, resets <code>button_timer</code> and flips the edge selection to rising.</p>
+<ul>
+<li>On a rising edge (button release), applies software debouncing. If the button was depressed longer than <code>123 * 0.1ms</code> but less than <code>HOLD_THRESHOLD</code>, the <code>running</code> flag is toggled. Finally, it flips the edge selection back to falling.</li>
+</ul>
 
 
 
