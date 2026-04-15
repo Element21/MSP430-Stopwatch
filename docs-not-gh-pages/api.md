@@ -67,6 +67,7 @@ Triggers repeatedly every 0.1ms. If `running` is `true`, `time_count` is increme
 
 ### `P1_ISR (PORT1_VECTOR)`
 Edge-triggered hardware interrupt for the P1.3 push button.
+
 - On a falling edge (button push), registers the press, resets `button_timer` and flips the edge selection to rising.
 
 - On a rising edge (button release), applies software debouncing. If the button was depressed longer than `123 * 0.1ms` but less than `HOLD_THRESHOLD`, the `running` flag is toggled. Finally, it flips the edge selection back to falling.
