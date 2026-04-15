@@ -38,5 +38,6 @@ P2.1 -> E
 
 Start here:
 
-* [API Reference](api.md) — Functions and usage.
-* [Example Usage](examples.md) — Examples (stopwatch)
+* [API Reference](api.md) - Functions and usage
+* [Example Usage](examples.md) - Examples (stopwatch)
+* [Codebase](https://github.com/Element21/MSP430-Stopwatch)
